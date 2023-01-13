@@ -1,16 +1,6 @@
-wget http://es.ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/locales_2.35-0ubuntu3_all.deb && \
-wget http://es.ports.ubuntu.com/ubuntu-ports/pool/main/a/apt/apt-utils_2.4.5_arm64.deb && \
-wget http://es.ports.ubuntu.com/ubuntu-ports/pool/main/d/dialog/dialog_1.2-20130928-1_arm64.deb && \
-wget http://es.ports.ubuntu.com/ubuntu-ports/pool/universe/n/ncurses/libncursesw5_6.3-2_arm64.deb && \
-wget http://es.ports.ubuntu.com/ubuntu-ports/pool/universe/n/ncurses/libtinfo5_6.3-2_arm64.deb && \
-dpkg -i apt-utils_2.4.5_arm64.deb
-dpkg -i locales_2.35-0ubuntu3_all.deb && \
-dpkg-reconfigure locales
-dpkg -i libtinfo5_6.3-2_arm64.deb && \
-dpkg -i libncursesw5_6.3-2_arm64.deb && \
-dpkg -i dialog_1.2-20130928-1_arm64.deb && \
+sed -i 's/ports.ubuntu/es.ports.ubuntu/g' /etc/apt/sources.list
 sed -i 's/jammy/kinetic/g' /etc/apt/sources.list && \
-cp /data/data/com.termux/files/home/vncstop /usr/local/bin/ && mv /usr/local/bin/vncstop /usr/local/bin/vncserver-stop
-cp /data/data/com.termux/files/home/vncstart /usr/local/bin && mv /usr/local/bin/vncstart /usr/local/bin/vncserver-start
-cp /data/data/com.termux/files/home/vnc /usr/local/bin
+cp /data/data/com.termux/files/home/ubuntu-distro/vncstop /usr/local/bin/ && mv /usr/local/bin/vncstop /usr/local/bin/vncserver-stop
+cp /data/data/com.termux/files/home/ubuntu-distro/vncstart /usr/local/bin && mv /usr/local/bin/vncstart /usr/local/bin/vncserver-start
+cp /data/data/com.termux/files/home/ubuntu-distro/vnc /usr/local/bin
 exit
