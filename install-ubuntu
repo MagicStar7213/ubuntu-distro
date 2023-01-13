@@ -1,3 +1,4 @@
+pkg install proot-distro
 proot-distro install ubuntu && \
 cp setup-ubuntu $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/root/
 ./ubuntu
