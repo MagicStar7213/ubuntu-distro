@@ -2,4 +2,4 @@ pkg install proot-distro
 proot-distro install ubuntu && \
 cp setup-ubuntu $PREFIX/var/lib/proot-distro/installed-rootfs/ubuntu/root/ && \
 echo 'export PATH="$HOME/ubuntu-distro:$PATH"' | tee -a $HOME/.bashrc && \
-./ubuntu
+$HOME/ubuntu-distro/ubuntu
